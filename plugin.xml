@@ -7,14 +7,10 @@ Domain classes necessary for linking internal entities to external NORC identiti
 </description>
   <documentation>http://grails.org/plugin/ncs-norc-link</documentation>
   <resources>
-    <resource>BuildConfig</resource>
-    <resource>Config</resource>
-    <resource>DataSource</resource>
-    <resource>UrlMappings</resource>
-    <resource>DwellingUnitLink</resource>
-    <resource>InstrumentLink</resource>
-    <resource>PersonLink</resource>
-    <resource>StudyLink</resource>
+    <resource>edu.umn.ncs.DwellingUnitLink</resource>
+    <resource>edu.umn.ncs.InstrumentLink</resource>
+    <resource>edu.umn.ncs.PersonLink</resource>
+    <resource>edu.umn.ncs.StudyLink</resource>
   </resources>
   <dependencies>
     <plugin name='ncsTracking' version='0.2' />
