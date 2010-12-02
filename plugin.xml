@@ -1,0 +1,24 @@
+<plugin name='ncs-norc-link' version='0.1' grailsVersion='1.3.5 &gt; *'>
+  <author>Aaron J. Zirbes</author>
+  <authorEmail>ajz@umn.edu</authorEmail>
+  <title>NCS NORC entity linking</title>
+  <description>\
+Domain classes necessary for linking internal entities to external NORC identities.
+</description>
+  <documentation>http://grails.org/plugin/ncs-norc-link</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>Config</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+    <resource>DwellingUnitLink</resource>
+    <resource>InstrumentLink</resource>
+    <resource>PersonLink</resource>
+    <resource>StudyLink</resource>
+  </resources>
+  <dependencies>
+    <plugin name='ncsTracking' version='0.2' />
+    <plugin name='ncsPeople' version='0.1' />
+  </dependencies>
+  <behavior />
+</plugin>
