@@ -12,7 +12,7 @@ class DwellingUnitLink {
 	Integer deliverySequenceId
 
 	// The NORC SU_ID
-	String NorcSuId
+	String norcSuId
 
     static constraints = {
     }

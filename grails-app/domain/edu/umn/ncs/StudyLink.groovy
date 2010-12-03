@@ -5,7 +5,7 @@ class StudyLink {
 	Study study
 
 	// This links the study to a NORC project ID
-	String NorcProjectId
+	String norcProjectId
 
     static constraints = {
     }

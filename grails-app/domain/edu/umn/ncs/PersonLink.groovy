@@ -6,7 +6,7 @@ class PersonLink {
 	Person person
 
 	// This links to the NORC SU_ID
-	String NorcSuId
+	String norcSuId
 
     static constraints = {
     }
