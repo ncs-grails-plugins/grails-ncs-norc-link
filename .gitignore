@@ -1,0 +1,8 @@
+dependencies.groovy
+plugin.xml
+application.properties
+grails-ncs-norc-link-*.zip
+plugin.xml
+target/
+web-app/
+
