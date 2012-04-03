@@ -8,16 +8,22 @@ import org.junit.*
 @TestFor(RecruitmentSegmentLink)
 class RecruitmentSegmentLinkTests {
 
+	def recruitmentSegment
+	def intensityGroup
+
     protected void setUp() {
         super.setUp()
+
+		intensityGroup = new IntensityGroup(name:'test group').save()
+
+		recruitmentSegment = new RecruitmentSegment(
+			intensityGroup: intensityGroup, 
+			selectionCount: 1000,
+			populationRatio: 1.0).save()
     }
 
     protected void tearDown() {
         super.tearDown()
-    }
-
-    void testSomething() {
-
     }
 
 
@@ -32,8 +38,7 @@ class RecruitmentSegmentLinkTests {
 			secondarySamplingUnitName:'Greater East Side', 
 			tertiarySamplingUnitId:'1823', 
 			tertiarySamplingUnitName:'Highland Park', 
-			segmentId:10 
-		)
+			segment: recruitmentSegment )
 		mockForConstraintsTests(RecruitmentSegmentLink, [existingLink])
 
 		def link = new RecruitmentSegmentLink()
@@ -43,7 +48,7 @@ class RecruitmentSegmentLinkTests {
 		assert "nullable" == link.errors["norcSegmentId"]
 		assert "nullable" == link.errors["secondarySamplingUnitId"]
 		assert "nullable" == link.errors["secondarySamplingUnitName"]
-		assert "nullable" == link.errors["segmentId"]
+		assert "nullable" == link.errors["segment"]
 
 		link = new RecruitmentSegmentLink(
 			westatSegmentFinalId:1042,
@@ -54,8 +59,7 @@ class RecruitmentSegmentLinkTests {
 			secondarySamplingUnitName:'ffjadkfjldjfladjfldjflikjfldjfljdflijadlifjsdifjadfjdijflidjf;ljfdsijflijf;lsdjflaijfladijf;ladjf;dijflaidjf;laidjf;aidjf;aldijf',
 			tertiarySamplingUnitId:'1835', 
 			tertiarySamplingUnitName:'White Bear', 
-			segmentId:6
-		)
+			segment: recruitmentSegment)
 
 		assert !link.validate()
 		assert "unique" == link.errors["westatSegmentFinalId"]

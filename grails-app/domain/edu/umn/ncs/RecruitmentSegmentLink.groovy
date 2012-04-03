@@ -22,7 +22,7 @@ class RecruitmentSegmentLink {
 	/** Study's tertiary sampling unit name, which is unique and pertains only to the 12 HIGH segments  */
 	String tertiarySamplingUnitName
 	/** Health Studies' Segment ids, ranging from 1-36  */
-	Integer segmentId
+	RecruitmentSegment segment
 
 	/** Non-default constraints for this class  
 	<dl>
@@ -42,8 +42,6 @@ class RecruitmentSegmentLink {
 			<dd>Can be blank</dd>
 		<dt>tertiarySamplingUnitName</dt>
 			<dd>Can be blank, and string length maximum size is 60 characters</dd>
-		<dt>segmentId</dt>
-			<dd>Is unique, Ids ranage from 1 to 36</dd>
 	</dl>
 	*/
 	static constraints = {
@@ -55,7 +53,6 @@ class RecruitmentSegmentLink {
 		secondarySamplingUnitName(maxSize:60)
 		tertiarySamplingUnitId(nullable:true, maxSize:32)
 		tertiarySamplingUnitName(nullable:true, maxSize:60)
-		segmentId(range:1..36, unique:true)
+		segment()
     }
-
 }
