@@ -10,9 +10,9 @@ class RecruitmentSegmentLink {
 	/** NORC's unique segment ids  */
 	Integer norcSegmentId
 	/** Study's primary sampling unit id, which is the same accross all segments */
-	String primarySamplingUnitId
+	String primarySamplingUnitId = '20000048'
 	/** Study's primary sampling unit name, which is the same accross all segments  */
-	String primarySamplingUnitName
+	String primarySamplingUnitName = 'Ramsey County'
 	/** Study's secondary smapling unit id, which is unique per segment  */
 	String secondarySamplingUnitId
 	/** Study's secondary sampling unit name, which is unique per segment  */
@@ -49,12 +49,12 @@ class RecruitmentSegmentLink {
 	static constraints = {
 		westatSegmentFinalId(unique:true)
 		norcSegmentId(range:1..12)
-		primarySamplingUnitId(inList:[20000048])
-		primarySamplingUnitName(inList:['Ramsey County'])
-		secondarySamplingUnitId(blank:false, unique:true)
-		secondarySamplingUnitName(blank:false, maxSize:60)
-		tertiarySamplingUnitId(blank:true)
-		tertiarySamplingUnitName(blank:true, maxSize:60)
+		primarySamplingUnitId(nullable:false, maxSize:32)
+		primarySamplingUnitName(nullable:false)
+		secondarySamplingUnitId(nullable:false, unique:true, maxSize:32)
+		secondarySamplingUnitName(nullable:false, maxSize:60)
+		tertiarySamplingUnitId(maxSize:32)
+		tertiarySamplingUnitName(maxSize:60)
 		segmentId(range:1..36, unique:true)
     }
 
