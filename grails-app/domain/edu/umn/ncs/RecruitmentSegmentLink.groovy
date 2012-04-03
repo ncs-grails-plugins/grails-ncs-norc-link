@@ -49,12 +49,12 @@ class RecruitmentSegmentLink {
 	static constraints = {
 		westatSegmentFinalId(unique:true)
 		norcSegmentId(range:1..12)
-		primarySamplingUnitId(nullable:false, maxSize:32)
-		primarySamplingUnitName(nullable:false)
-		secondarySamplingUnitId(nullable:false, unique:true, maxSize:32)
-		secondarySamplingUnitName(nullable:false, maxSize:60)
-		tertiarySamplingUnitId(maxSize:32)
-		tertiarySamplingUnitName(maxSize:60)
+		primarySamplingUnitId(maxSize:32)
+		primarySamplingUnitName()
+		secondarySamplingUnitId(unique:true, maxSize:32)
+		secondarySamplingUnitName(maxSize:60)
+		tertiarySamplingUnitId(nullable:true, maxSize:32)
+		tertiarySamplingUnitName(nullable:true, maxSize:60)
 		segmentId(range:1..36, unique:true)
     }
 

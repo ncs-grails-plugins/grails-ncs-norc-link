@@ -41,12 +41,8 @@ class RecruitmentSegmentLinkTests {
 		assert !link.validate()
 		assert "nullable" == link.errors["westatSegmentFinalId"]
 		assert "nullable" == link.errors["norcSegmentId"]
-		assert "nullable" == link.errors["primarySamplingUnitId"]
-		assert "nullable" == link.errors["primarySamplingUnitName"]
 		assert "nullable" == link.errors["secondarySamplingUnitId"]
 		assert "nullable" == link.errors["secondarySamplingUnitName"]
-		assert "nullable" == link.errors["tertiarySamplingUnitId"]
-		assert "nullable" == link.errors["tertiarySamplingUnitName"]
 		assert "nullable" == link.errors["segmentId"]
 
 		link = new RecruitmentSegmentLink(
@@ -64,8 +60,6 @@ class RecruitmentSegmentLinkTests {
 		assert !link.validate()
 		assert "unique" == link.errors["westatSegmentFinalId"]
 		assert "range" == link.errors["norcSegmentId"]
-		assert "inList" == link.errors["primarySamplingUnitId"]
-		assert "blank" == link.errors["secondarySamplingUnitId"]
 		assert "maxSize" == link.errors["secondarySamplingUnitName"]
 	}
 

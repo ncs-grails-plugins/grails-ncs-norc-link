@@ -5,4 +5,7 @@ grails-ncs-norc-link-*.zip
 plugin.xml
 target/
 web-app/
-
+*.log
+grails-app/conf/UrlMappings.groovy
+grails-app/i18n/
+*.swp
